@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.Label?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gb.java.netstorage.client.Controller">
+   <MenuBar>
+      <Menu text="Файл">
+         <MenuItem text = "Выйти из программы" onAction="#menuItemExit"/>
+      </Menu>
+   </MenuBar>
+
+   <HBox>
+      <Label alignment="CENTER" maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Local files"/>
+      <Label alignment="CENTER" maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Server files"/>
+      <padding>
+         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+      </padding>
+   </HBox>
+
+   <HBox VBox.vgrow="ALWAYS" spacing="5">
+      <fx:include fx:id="leftPanel" source="panelLeft.fxml" HBox.hgrow="ALWAYS"/>
+      <fx:include fx:id="rightPanel" source="panelRight.fxml" HBox.hgrow="ALWAYS"/>
+      <padding>
+         <Insets bottom="0.0" left="5.0" right="5.0" top="2.0"/>
+      </padding>
+   </HBox>
+
+   <HBox spacing="5">
+      <Button text="Загрузить / скачать файл" focusTraversable="false" maxWidth="Infinity" HBox.hgrow="ALWAYS" onAction="#downloadUploadBtnAction"/>
+      <Button fx:id="createDirBtn" text="Создать папку в хранилище" focusTraversable="false" maxWidth="Infinity" HBox.hgrow="ALWAYS" onAction="#createDirBtnAction"/>
+      <Button text="Удалить" focusTraversable="false" maxWidth="Infinity" HBox.hgrow="ALWAYS" onAction="#deleteBtnAction"/>
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+      </padding>
+   </HBox>
+</VBox>
